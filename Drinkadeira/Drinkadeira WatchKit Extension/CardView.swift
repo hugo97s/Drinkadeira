@@ -13,16 +13,21 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .center){
             
-            MessCardsView(shake: self.$shake)
-                .padding(.top)
+            ZStack {
+                ResultCardView(shake: self.$shake)
+                    .frame(width: 160, height: 80, alignment: .center)
+                
+                MessCardsView(shake: self.$shake)
+            }
+            .padding(.top)
             
-            Text("shake your arm to\ndiscover a card")
+            Spacer()
+            
+            Text(self.shake ? "tap to next round" : "shake your arm to\ndiscover a card")
                 .font(.footnote)
                 .fontWeight(.light)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                .frame(height: 40)
-                .padding(.top, 30)
                 .onTapGesture {
                     self.shake.toggle()
                 }
@@ -31,6 +36,53 @@ struct CardView: View {
                 }
             
         }
+    }
+}
+
+struct ResultCardView: View {
+    @Binding var shake: Bool
+    @State var opacity: Double = 0.0
+    
+    var body: some View {
+        VStack {
+            Text("all the guys drink")
+                .font(.body)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .frame(height: 20)
+                .padding(.bottom, 10)
+            
+            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
+                Image("CardFront")
+                    .resizable()
+                    .frame(width: 50, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal)
+                
+                Text("ACE")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.horizontal)
+            }
+        }
+        .shadow(radius: 10)
+        .padding()
+        .onChange(of: shake, perform: { _ in
+            if shake {
+                withAnimation(Animation.linear(duration: 1.0)){
+                    self.opacity = 1.0
+                }
+            } else {
+                withAnimation(Animation.linear(duration: 1.0)){
+                    self.opacity = 0.0
+                }
+            }
+        })
+        .background(Color.gray.opacity(0.5))
+        .cornerRadius(10)
+        .opacity(self.opacity)
+        .offset(y: 15)
     }
 }
 
@@ -68,7 +120,7 @@ struct MessCardsView: View {
         .opacity(self.opacity)
         .onChange(of: shake, perform: { _ in
             if shake {
-                withAnimation(Animation.linear(duration: 1.0)){
+                withAnimation(Animation.linear(duration: 0.5)){
                     self.shakeOffset[0] = 50
                     self.shakeOffset[1] = -50
                     self.shakeOffset[2] = 50
@@ -76,7 +128,7 @@ struct MessCardsView: View {
                     self.opacity = 0.0
                 }
             } else {
-                withAnimation(Animation.linear(duration: 1.0)){
+                withAnimation(Animation.linear(duration: 0.5)){
                     self.shakeOffset[0] = 0
                     self.shakeOffset[1] = 0
                     self.shakeOffset[2] = 0
