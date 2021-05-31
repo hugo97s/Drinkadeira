@@ -64,7 +64,8 @@ struct ResultCardView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                .frame(height: 40)
+                .frame(height: 35)
+                .padding(.top, 2)
         }
         .shadow(radius: 10)
         .padding()
