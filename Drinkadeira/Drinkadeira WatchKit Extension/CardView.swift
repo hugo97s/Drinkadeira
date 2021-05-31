@@ -23,7 +23,7 @@ struct CardView: View {
             
             Spacer()
             
-            Text(self.shake ? "toque para girar a\ngarrafa novamente" : "balance o braço para\ndescobrir a carta")
+            Text(self.shake ? "toque para retornar à tela da garrafa" : "balance o braço para descobrir a carta")
                 .font(.footnote)
                 .fontWeight(.light)
                 .foregroundColor(.white)
