@@ -23,7 +23,7 @@ struct CardView: View {
             
             Spacer()
             
-            Text(self.shake ? "tap to next round" : "shake your arm to\ndiscover a card")
+            Text(self.shake ? "toque para girar a\ngarrafa novamente" : "balance o braço para\ndescobrir a carta")
                 .font(.footnote)
                 .fontWeight(.light)
                 .foregroundColor(.white)
@@ -34,6 +34,7 @@ struct CardView: View {
                 .onReceive(NotificationCenter.default.publisher(for: .deviceDidShake)) { _ in
                     self.shake.toggle()
                 }
+                .padding(.bottom, -15)
             
         }
     }
@@ -53,7 +54,7 @@ struct ResultCardView: View {
                     .padding(.horizontal)
                 
                 Text(card.getName())
-                    .font(.title3)
+                    .font(.caption2)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding(.horizontal)

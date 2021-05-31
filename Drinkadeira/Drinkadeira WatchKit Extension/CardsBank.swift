@@ -13,12 +13,12 @@ class CardsBank {
     
     init() {
         self.cards = [
-            Card(name: "ACE", imageName: "CardFront", description: "all guys drink"),
-            Card(name: "TWO", imageName: "CardFront", description: "all drink"),
-            Card(name: "THREE", imageName: "CardFront", description: "drink 2 shots"),
-            Card(name: "FOUR", imageName: "CardFront", description: "pick someone\nto drink"),
-            Card(name: "FIVE", imageName: "CardFront", description: "ladies drink"),
-            Card(name: "SIX", imageName: "CardFront", description: "find a drinking\nbuddy")
+            Card(name: "ÁS", imageName: "CardFront", description: "todos os homens bebem"),
+            Card(name: "DOIS", imageName: "CardFront", description: "todos bebem"),
+            Card(name: "TRÊS", imageName: "CardFront", description: "beba dois copos"),
+            Card(name: "QUATRO", imageName: "CardFront", description: "escolha alguém para beber"),
+            Card(name: "CINCO", imageName: "CardFront", description: "todas as mulheres bebem"),
+            Card(name: "SEIS", imageName: "CardFront", description: "escolha um parceiro de bebida")
         ]
     }
     
