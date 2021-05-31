@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showDetails = false
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack(alignment: .center, spacing:20){
+            Image("Gota")
+                        .resizable()
+                        .scaledToFit()
+                
+            HStack(alignment: .top, spacing: 15){
+                Button("Jogar") {
+                    print("Jogar was pressed")
+                }
+                Button("Regras") {
+                    print("Regras was pressed")
+                }
+            }
+            .padding(.bottom, -35)
+        }
     }
 }
 
