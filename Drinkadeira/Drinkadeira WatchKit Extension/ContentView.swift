@@ -16,11 +16,11 @@ struct ContentView: View {
                         .scaledToFit()
                 
             HStack(alignment: .top, spacing: 15){
-                Button("Jogar") {
-                    print("Jogar was pressed")
+                NavigationLink(destination: QRcodeScreen()) {
+                                    Text("Jogar")
                 }
-                Button("Regras") {
-                    print("Regras was pressed")
+                NavigationLink(destination: QRcodeScreen()) {
+                                    Text(" Regras")
                 }
             }
             .padding(.bottom, -35)
