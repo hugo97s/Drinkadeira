@@ -18,6 +18,8 @@
 		2C68E86A265FCA1D0050ABB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C68E869265FCA1D0050ABB2 /* Assets.xcassets */; };
 		2C68E86D265FCA1D0050ABB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C68E86C265FCA1D0050ABB2 /* Preview Assets.xcassets */; };
 		3E7CCC3C265FD34300BDF077 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CCC3B265FD34300BDF077 /* CardView.swift */; };
+		3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1C2664FAED008ABC06 /* Card.swift */; };
+		3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */; };
 		3EE2180326610FDF0024884B /* CoreMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2180226610FDF0024884B /* CoreMotionExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		2C68E86E265FCA1D0050ABB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C68E86F265FCA1D0050ABB2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3E7CCC3B265FD34300BDF077 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3ECCAA1C2664FAED008ABC06 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBank.swift; sourceTree = "<group>"; };
 		3EE2180226610FDF0024884B /* CoreMotionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +139,8 @@
 				2C68E86B265FCA1D0050ABB2 /* Preview Content */,
 				3E7CCC3B265FD34300BDF077 /* CardView.swift */,
 				3EE2180226610FDF0024884B /* CoreMotionExtension.swift */,
+				3ECCAA1C2664FAED008ABC06 /* Card.swift */,
+				3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */,
 			);
 			path = "Drinkadeira WatchKit Extension";
 			sourceTree = "<group>";
@@ -274,12 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EE2180326610FDF0024884B /* CoreMotionExtension.swift in Sources */,
+				3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */,
 				2C68E864265FCA1D0050ABB2 /* NotificationController.swift in Sources */,
 				3E7CCC3C265FD34300BDF077 /* CardView.swift in Sources */,
 				2C68E862265FCA1D0050ABB2 /* ContentView.swift in Sources */,
 				2C68E868265FCA1D0050ABB2 /* ComplicationController.swift in Sources */,
 				2C68E860265FCA1D0050ABB2 /* DrinkadeiraApp.swift in Sources */,
 				2C68E866265FCA1D0050ABB2 /* NotificationView.swift in Sources */,
+				3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,29 +42,29 @@ struct CardView: View {
 struct ResultCardView: View {
     @Binding var shake: Bool
     @State var opacity: Double = 0.0
+    var card = CardsBank.shared.getRandomCard()
     
     var body: some View {
         VStack {
-            Text("all the guys drink")
-                .font(.body)
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
-                .frame(height: 20)
-                .padding(.bottom, 10)
-            
             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
-                Image("CardFront")
+                Image(card.getImageName())
                     .resizable()
-                    .frame(width: 50, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 45, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding(.horizontal)
                 
-                Text("ACE")
+                Text(card.getName())
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding(.horizontal)
             }
+            
+            Text(card.getDescription())
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .frame(height: 40)
         }
         .shadow(radius: 10)
         .padding()
@@ -74,9 +74,7 @@ struct ResultCardView: View {
                     self.opacity = 1.0
                 }
             } else {
-                withAnimation(Animation.linear(duration: 1.0)){
-                    self.opacity = 0.0
-                }
+                self.opacity = 0.0
             }
         })
         .background(Color.gray.opacity(0.5))
@@ -128,13 +126,11 @@ struct MessCardsView: View {
                     self.opacity = 0.0
                 }
             } else {
-                withAnimation(Animation.linear(duration: 0.5)){
-                    self.shakeOffset[0] = 0
-                    self.shakeOffset[1] = 0
-                    self.shakeOffset[2] = 0
-                    self.shakeOffset[3] = 0
-                    self.opacity = 1.0
-                }
+                self.shakeOffset[0] = 0
+                self.shakeOffset[1] = 0
+                self.shakeOffset[2] = 0
+                self.shakeOffset[3] = 0
+                self.opacity = 1.0
             }
         })
     }
