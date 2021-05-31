@@ -12,7 +12,7 @@ struct DrinkadeiraApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                CardView()
+                ContentView()
             }
         }
 
