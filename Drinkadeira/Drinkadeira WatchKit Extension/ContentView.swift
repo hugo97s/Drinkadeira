@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showDetails = false
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack(alignment: .center, spacing:20){
+            Image("Gota")
+                        .resizable()
+                        .scaledToFit()
+                
+            HStack(alignment: .top, spacing: 15){
+                NavigationLink(destination: QRcodeScreen()) {
+                                    Text("Jogar")
+                }
+                NavigationLink(destination: QRcodeScreen()) {
+                                    Text(" Regras")
+                }
+            }
+            .padding(.bottom, -35)
+        }
     }
 }
 
