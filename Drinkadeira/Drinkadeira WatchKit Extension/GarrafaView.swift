@@ -9,24 +9,22 @@ import WatchKit
 import SwiftUI
 import UIKit
 
+public enum SwipeStatus {
+    case right, left, none
+}
+
 struct GarrafaView: View {
     @State var didSwipe = false
-    let rotationRec = WKTapGestureRecognizer()
-    //let gameScene = GameScene(didSwipe: didSwipe)
+    @State var swipeDirection = SwipeStatus.none
     
     private var thresholdPercentage: CGFloat = 0.3
-    @State var swipeDirection = swipeStatus.none
-    
-    enum swipeStatus {
-        case right, left, none
-    }
     
     private func getGesturePercentage(_ width: CGFloat, from gesture: DragGesture.Value) -> CGFloat {
             gesture.translation.width / width
     }
     
     var body: some View {
-        SpriteView(scene: GameScene(didSwipe: $didSwipe))
+        SpriteView(scene: GameScene(didSwipe: $didSwipe, direction: $swipeDirection))
             .onTapGesture {
                 didSwipe.toggle()
             }
@@ -34,23 +32,16 @@ struct GarrafaView: View {
                 DragGesture()
                     .onChanged { value in
                         if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) >= self.thresholdPercentage {
-                            print("right")
                             self.swipeDirection = .right
                             self.didSwipe.toggle()
                         } else if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) <= -self.thresholdPercentage {
-                            print("left")
                             self.swipeDirection = .left
                             self.didSwipe.toggle()
 
                         } else {
-                            print("mexeu pouco")
                             self.swipeDirection = .none
-
                         }
                         
-                    }
-                    .onEnded { value in
-                        print("fim do drag")
                     }
             )
     }
@@ -66,9 +57,11 @@ class GameScene: SKScene {
     
     var garrafa: SKSpriteNode = SKSpriteNode(imageNamed: "garrafa")
     @Binding var didSwipe: Bool
+    @Binding var direction: SwipeStatus
     
-    init(didSwipe: Binding<Bool>) {
+    init(didSwipe: Binding<Bool>, direction: Binding<SwipeStatus>) {
         self._didSwipe = didSwipe
+        self._direction = direction
         super.init(size: CGSize(width: 197, height: 162))
     }
     
@@ -86,7 +79,7 @@ class GameScene: SKScene {
         if(didSwipe){
             let randomAngle = Double.random(in: 18.84...37.68)
             let randomDuration = Double.random(in: 4...5)
-            let rotateAction = SKAction.rotate(byAngle: CGFloat(randomAngle), duration: randomDuration)
+            let rotateAction = SKAction.rotate(byAngle: (direction == .right) ? CGFloat(randomAngle) : -CGFloat(randomAngle), duration: randomDuration)
             garrafa.run(rotateAction)
             didSwipe = false
         }
