@@ -5,26 +5,60 @@
 //  Created by Victor Vieira on 31/05/21.
 //
 import SpriteKit
+import WatchKit
 import SwiftUI
 import UIKit
 
-
-
 struct GarrafaView: View {
+    @State var didSwipe = false
     let rotationRec = WKTapGestureRecognizer()
     //let gameScene = GameScene(didSwipe: didSwipe)
-    @State var didSwipe = false
+    
+    private var thresholdPercentage: CGFloat = 0.3
+    @State var swipeDirection = swipeStatus.none
+    
+    enum swipeStatus {
+        case right, left, none
+    }
+    
+    private func getGesturePercentage(_ width: CGFloat, from gesture: DragGesture.Value) -> CGFloat {
+            gesture.translation.width / width
+    }
+    
     var body: some View {
         SpriteView(scene: GameScene(didSwipe: $didSwipe))
             .onTapGesture {
                 didSwipe.toggle()
             }
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) >= self.thresholdPercentage {
+                            print("right")
+                            self.swipeDirection = .right
+                            self.didSwipe.toggle()
+                        } else if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) <= -self.thresholdPercentage {
+                            print("left")
+                            self.swipeDirection = .left
+                            self.didSwipe.toggle()
+
+                        } else {
+                            print("mexeu pouco")
+                            self.swipeDirection = .none
+
+                        }
+                        
+                    }
+                    .onEnded { value in
+                        print("fim do drag")
+                    }
+            )
     }
 }
 
 struct GarrafaView_Previews: PreviewProvider {
     static var previews: some View {
-        GarrafaView(didSwipe: true)
+        GarrafaView()
     }
 }
 
