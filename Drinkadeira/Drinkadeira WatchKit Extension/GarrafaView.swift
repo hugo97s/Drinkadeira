@@ -31,16 +31,29 @@ struct GarrafaView: View {
             .gesture(
                 DragGesture()
                     .onChanged { value in
+                        print(value.startLocation)
                         if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) >= self.thresholdPercentage {
-                            self.swipeDirection = .right
+                            if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
+                                self.swipeDirection = .right
+                            }
+                            else{
+                                self.swipeDirection = .left
+                            }
+                            
                             self.didSwipe.toggle()
                         } else if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) <= -self.thresholdPercentage {
-                            self.swipeDirection = .left
+                            if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
+                                self.swipeDirection = .left
+                            }
+                            else{
+                                self.swipeDirection = .right
+                            }
                             self.didSwipe.toggle()
 
                         } else {
                             self.swipeDirection = .none
                         }
+                        
                         
                     }
             )
@@ -79,7 +92,7 @@ class GameScene: SKScene {
         if(didSwipe){
             let randomAngle = Double.random(in: 18.84...37.68)
             let randomDuration = Double.random(in: 4...5)
-            let rotateAction = SKAction.rotate(byAngle: (direction == .right) ? CGFloat(randomAngle) : -CGFloat(randomAngle), duration: randomDuration)
+            let rotateAction = SKAction.rotate(byAngle: (direction == .right) ? -CGFloat(randomAngle) : CGFloat(randomAngle), duration: randomDuration)
             garrafa.run(rotateAction)
             didSwipe = false
         }
