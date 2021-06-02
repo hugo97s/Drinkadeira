@@ -7,8 +7,18 @@
 
 import SwiftUI
 
+class Boolean: ObservableObject {
+    var booleano = false
+    
+    init() {
+        self.booleano = false
+    }
+}
+
 struct ContentView: View {
     @State private var showDetails = false
+    var teste: Boolean = Boolean()
+    
     var body: some View {
         VStack(alignment: .center, spacing:20){
             Image("Gota")
@@ -16,7 +26,7 @@ struct ContentView: View {
                         .scaledToFit()
                 
             HStack(alignment: .top, spacing: 15){
-                NavigationLink(destination: GarrafaView()) {
+                NavigationLink(destination: BottleView().environmentObject(teste)) {
                                     Text("Jogar")
                 }
                 NavigationLink(destination: QRcodeScreen()) {
