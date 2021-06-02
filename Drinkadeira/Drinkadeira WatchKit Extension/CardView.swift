@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     @State var shake: Bool = false
+    @Binding var show: Bool
     
     var body: some View {
         VStack(alignment: .center){
@@ -29,14 +30,17 @@ struct CardView: View {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .onTapGesture {
-                    self.shake.toggle()
-                }
-                .onReceive(NotificationCenter.default.publisher(for: .deviceDidShake)) { _ in
-                    self.shake.toggle()
+                    if self.shake {
+                        self.show = false
+                        self.shake = false
+                    } else {
+                        self.shake = true
+                    }
                 }
                 .padding(.bottom, -15)
             
         }
+        .opacity(self.show ? 1 : 0)
     }
 }
 
@@ -140,6 +144,6 @@ struct MessCardsView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(show: .constant(true))
     }
 }

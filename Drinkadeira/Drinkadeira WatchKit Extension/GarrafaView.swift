@@ -16,6 +16,7 @@ public enum SwipeStatus {
 struct GarrafaView: View {
     @State var didSwipe = false
     @State var swipeDirection = SwipeStatus.none
+    @State var showCards = false
     
     private var thresholdPercentage: CGFloat = 0.3
     
@@ -24,39 +25,50 @@ struct GarrafaView: View {
     }
     
     var body: some View {
-        SpriteView(scene: GameScene(didSwipe: $didSwipe, direction: $swipeDirection))
-            .onTapGesture {
-                didSwipe.toggle()
-            }
-            .gesture(
-                DragGesture()
-                    .onChanged { value in
-                        print(value.startLocation)
-                        if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) >= self.thresholdPercentage {
-                            if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
-                                self.swipeDirection = .right
-                            }
-                            else{
-                                self.swipeDirection = .left
-                            }
-                            
-                            self.didSwipe.toggle()
-                        } else if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) <= -self.thresholdPercentage {
-                            if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
-                                self.swipeDirection = .left
-                            }
-                            else{
-                                self.swipeDirection = .right
-                            }
-                            self.didSwipe.toggle()
-
-                        } else {
-                            self.swipeDirection = .none
-                        }
-                        
-                        
+        ZStack {
+            SpriteView(scene: GameScene(didSwipe: $didSwipe, direction: $swipeDirection))
+                .opacity(self.showCards ? 0 : 1)
+                .onTapGesture {
+                    print("touch bottle")
+                    
+                    if didSwipe {
+                        self.showCards = true
+                        print("show cards")
                     }
+                    
+                }
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            print(value.startLocation)
+                            if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) >= self.thresholdPercentage {
+                                if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
+                                    self.swipeDirection = .right
+                                }
+                                else{
+                                    self.swipeDirection = .left
+                                }
+                                
+                                self.didSwipe = true
+                            } else if (self.getGesturePercentage(WKInterfaceDevice.current().screenBounds.width, from: value)) <= -self.thresholdPercentage {
+                                if (WKInterfaceDevice.current().screenBounds.height / 2 > value.startLocation.y) {
+                                    self.swipeDirection = .left
+                                }
+                                else{
+                                    self.swipeDirection = .right
+                                }
+                                self.didSwipe = true
+
+                            } else {
+                                self.swipeDirection = .none
+                                self.didSwipe = false
+                            }
+                        }
             )
+            
+            CardView(show: self.$showCards)
+                .opacity(self.showCards ? 1 : 0)
+        }
     }
 }
 
@@ -89,12 +101,12 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if(didSwipe){
+        if direction != .none {
             let randomAngle = Double.random(in: 18.84...37.68)
             let randomDuration = Double.random(in: 4...5)
             let rotateAction = SKAction.rotate(byAngle: (direction == .right) ? -CGFloat(randomAngle) : CGFloat(randomAngle), duration: randomDuration)
             garrafa.run(rotateAction)
-            didSwipe = false
+            direction = .none
         }
     }
     
