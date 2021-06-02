@@ -18,6 +18,7 @@
 		2C68E868265FCA1D0050ABB2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68E867265FCA1D0050ABB2 /* ComplicationController.swift */; };
 		2C68E86A265FCA1D0050ABB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C68E869265FCA1D0050ABB2 /* Assets.xcassets */; };
 		2C68E86D265FCA1D0050ABB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C68E86C265FCA1D0050ABB2 /* Preview Assets.xcassets */; };
+		579B780126650A9400BC7323 /* GarrafaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B780026650A9400BC7323 /* GarrafaView.swift */; };
 		3E7CCC3C265FD34300BDF077 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CCC3B265FD34300BDF077 /* CardView.swift */; };
 		3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1C2664FAED008ABC06 /* Card.swift */; };
 		3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */; };
@@ -82,6 +83,7 @@
 		2C68E86C265FCA1D0050ABB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C68E86E265FCA1D0050ABB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C68E86F265FCA1D0050ABB2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		579B780026650A9400BC7323 /* GarrafaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarrafaView.swift; sourceTree = "<group>"; };
 		3E7CCC3B265FD34300BDF077 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3ECCAA1C2664FAED008ABC06 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBank.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				2C1D91A926649801006EF105 /* QRcodeScreen.swift */,
 				2C68E863265FCA1D0050ABB2 /* NotificationController.swift */,
 				2C68E865265FCA1D0050ABB2 /* NotificationView.swift */,
+				579B780026650A9400BC7323 /* GarrafaView.swift */,
 				2C68E867265FCA1D0050ABB2 /* ComplicationController.swift */,
 				2C68E869265FCA1D0050ABB2 /* Assets.xcassets */,
 				2C68E86E265FCA1D0050ABB2 /* Info.plist */,
@@ -291,6 +294,7 @@
 				2C1D91AA26649801006EF105 /* QRcodeScreen.swift in Sources */,
 				2C68E860265FCA1D0050ABB2 /* DrinkadeiraApp.swift in Sources */,
 				2C68E866265FCA1D0050ABB2 /* NotificationView.swift in Sources */,
+				579B780126650A9400BC7323 /* GarrafaView.swift in Sources */,
 				3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +435,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Drinkadeira WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Drinkadeira WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,7 +459,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Drinkadeira WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Drinkadeira WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				IBSC_MODULE = Drinkadeira_WatchKit_Extension;
 				INFOPLIST_FILE = "Drinkadeira WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira.watchkitapp;
@@ -500,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				IBSC_MODULE = Drinkadeira_WatchKit_Extension;
 				INFOPLIST_FILE = "Drinkadeira WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira.watchkitapp;
@@ -516,12 +520,14 @@
 		2C68E87B265FCA1D0050ABB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -529,12 +535,14 @@
 		2C68E87C265FCA1D0050ABB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4A49P664P7;
+				DEVELOPMENT_TEAM = VZ9BWS84AA;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
