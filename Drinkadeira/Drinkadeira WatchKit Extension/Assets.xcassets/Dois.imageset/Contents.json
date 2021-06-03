@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "CardsBack@1x.png",
+      "filename" : "Dois.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "CardsBack@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "CardsBack@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

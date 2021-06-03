@@ -23,19 +23,18 @@ struct CardView: View {
             
             Spacer()
             
-            Text(self.shake ? "toque para retornar à tela da garrafa" : "balance o braço para descobrir a carta")
-                .font(.footnote)
-                .fontWeight(.light)
+            Text(self.shake ? "toque para sortear o próximo jogador" : "toque para desvendar a ação da carta")
+                .font(.system(size: 12))
+                .fontWeight(.regular)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .onTapGesture {
                     self.shake.toggle()
                 }
-                .onReceive(NotificationCenter.default.publisher(for: .deviceDidShake)) { _ in
-                    self.shake.toggle()
-                }
-                .padding(.bottom, -15)
-            
+                .padding(.bottom, -18)
+                .padding(.horizontal, 15)
+                
+
         }
     }
 }
@@ -50,25 +49,28 @@ struct ResultCardView: View {
             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
                 Image(card.getImageName())
                     .resizable()
-                    .frame(width: 45, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(.horizontal)
+                    .frame(width: 35, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Spacer().frame(width: 10)
                 
                 Text(card.getName())
                     .font(.caption2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
             }
             
+            
             Text(card.getDescription())
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
+                .font(.system(size: 13))
+                .fontWeight(.regular)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
-                .frame(height: 35)
+                .frame(height: 50)
                 .padding(.top, 2)
+            
         }
         .shadow(radius: 10)
+        .padding(.horizontal, 1)
         .padding()
         .onChange(of: shake, perform: { _ in
             if shake {
@@ -79,7 +81,7 @@ struct ResultCardView: View {
                 self.opacity = 0.0
             }
         })
-        .background(Color.gray.opacity(0.5))
+        .background(Color.init(UIColor.init(red: 121/255, green: 195/255, blue: 244/255, alpha: 1.0))) // RGB(137, 180, 209)
         .cornerRadius(10)
         .opacity(self.opacity)
         .offset(y: 15)
@@ -90,33 +92,35 @@ struct MessCardsView: View {
     @Binding var shake: Bool
     @State var shakeOffset: [CGFloat] = [0,0,0,0]
     @State var opacity: Double = 1.0
+    let cardImageName = "CardBack"
     
     var body: some View {
         ZStack {
-            Image("Card")
+            Image(cardImageName)
                 .resizable()
                 .frame(width: 60, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .rotationEffect(Angle.init(degrees: 45.0))
                 .offset(x: shakeOffset[0], y: shakeOffset[0]/2)
             
-            Image("Card")
+            Image(cardImageName)
                 .resizable()
                 .frame(width: 60, height: 80, alignment: .center)
                 .rotationEffect(Angle.init(degrees: 15.0))
                 .offset(x: shakeOffset[1], y: -shakeOffset[1]/5)
             
-            Image("Card")
+            Image(cardImageName)
                 .resizable()
                 .frame(width: 60, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .rotationEffect(Angle.init(degrees: 350.0))
                 .offset(x: shakeOffset[2], y: -shakeOffset[2]/10)
             
-            Image("Card")
+            Image(cardImageName)
                 .resizable()
                 .frame(width: 60, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .rotationEffect(Angle.init(degrees: 320.0))
                 .offset(x: shakeOffset[3], y: -shakeOffset[3]/2)
         }
+        .offset(y: 10)
         .opacity(self.opacity)
         .onChange(of: shake, perform: { _ in
             if shake {
