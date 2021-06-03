@@ -23,7 +23,6 @@
 		3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */; };
 		3EE2180326610FDF0024884B /* CoreMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2180226610FDF0024884B /* CoreMotionExtension.swift */; };
 		579B780126650A9400BC7323 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B780026650A9400BC7323 /* BottleView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,7 @@
 
 /* Begin PBXFileReference section */
 		2C1D91A926649801006EF105 /* QRcodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcodeScreen.swift; sourceTree = "<group>"; };
-		2C68E84A265FCA1C0050ABB2 /* Drinkadeira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinkadeira.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C68E84A265FCA1C0050ABB2 /* Gota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C68E84E265FCA1C0050ABB2 /* Drinkadeira WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drinkadeira WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C68E853265FCA1D0050ABB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C68E855265FCA1D0050ABB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBank.swift; sourceTree = "<group>"; };
 		3EE2180226610FDF0024884B /* CoreMotionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionExtension.swift; sourceTree = "<group>"; };
 		579B780026650A9400BC7323 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,7 @@
 		2C68E84B265FCA1C0050ABB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C68E84A265FCA1C0050ABB2 /* Drinkadeira.app */,
+				2C68E84A265FCA1C0050ABB2 /* Gota.app */,
 				2C68E84E265FCA1C0050ABB2 /* Drinkadeira WatchKit App.app */,
 				2C68E85A265FCA1D0050ABB2 /* Drinkadeira WatchKit Extension.appex */,
 			);
@@ -178,7 +176,7 @@
 			);
 			name = Drinkadeira;
 			productName = Drinkadeira;
-			productReference = 2C68E84A265FCA1C0050ABB2 /* Drinkadeira.app */;
+			productReference = 2C68E84A265FCA1C0050ABB2 /* Gota.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		2C68E84D265FCA1C0050ABB2 /* Drinkadeira WatchKit App */ = {
@@ -525,10 +523,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VZ9BWS84AA;
+				DEVELOPMENT_TEAM = FTH34SW9QV;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gota;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -540,10 +538,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VZ9BWS84AA;
+				DEVELOPMENT_TEAM = FTH34SW9QV;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Drinkadeira;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gota;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
