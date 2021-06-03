@@ -18,7 +18,7 @@ struct BottleView: View {
     @State var endSwipe = false
     @State var rotationDirection: RotationStatus = .none
     @State var showCards = false
-    
+    @State var bottleAngle: Double = 0
     private var thresholdPercentage: CGFloat = 0.3
     
     private func getGesturePercentage(_ width: CGFloat, from gesture: DragGesture.Value) -> CGFloat {
@@ -29,7 +29,7 @@ struct BottleView: View {
         ZStack {
             
             ZStack(alignment: .center){
-                SpriteView(scene: GameScene(didSwipe: $startSwipe, direction: $rotationDirection))
+                SpriteView(scene: GameScene(didSwipe: $startSwipe, direction: $rotationDirection, bottleAngle: $bottleAngle))
                     .opacity(self.showCards ? 0 : 1)
                     .onTapGesture {
                         if endSwipe {
@@ -78,13 +78,13 @@ struct BottleView: View {
                     Spacer()
                     
                     if self.endSwipe {
-                        Text("avançar")
+                        Text("toque para avançar")
                             .font(.footnote)
                             .fontWeight(.light)
-                            .foregroundColor(.red)
+                            .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .padding(.bottom, -15)
-
+                            .opacity(self.showCards ? 0: 1)
                     }
                         
                 }
@@ -107,13 +107,16 @@ class GameScene: SKScene {
     var bottle: SKSpriteNode = SKSpriteNode(imageNamed: "garrafa")
     @Binding var startSwipe: Bool
     @Binding var direction: RotationStatus
-    @State var bottleAngle: Double = 0
+    @Binding var bottleAngle: Double
     
-    init(didSwipe: Binding<Bool>, direction: Binding<RotationStatus>) {
+    init(didSwipe: Binding<Bool>, direction: Binding<RotationStatus>, bottleAngle: Binding<Double>) {
         self._startSwipe = didSwipe
         self._direction = direction
-        self.bottleAngle = 0
+        self._bottleAngle = bottleAngle
         super.init(size: CGSize(width: 197, height: 162))
+        //self.bottle.zRotation = CGFloat(self.bottleAngle)
+
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -124,31 +127,40 @@ class GameScene: SKScene {
         self.backgroundColor = .clear
         bottle.position = CGPoint(x: 100, y: 80)
         bottle.scale(to: CGSize(width: 52, height: 151.77))
-        
+        if bottleAngle != 0 {
+            bottle.zRotation = CGFloat(bottleAngle)
+            bottleAngle = 0
+        }
         self.addChild(bottle)
     }
     
     override func update(_ currentTime: TimeInterval) {
+//        if bottleAngle != 0 {
+//            self.bottleAngle = 0
+//        }
         if direction != .none {
             let randomAngle = Double.random(in: 18.84...37.68)
             let randomDuration = Double.random(in: 4...5)
             let rotateAction = SKAction.rotate(byAngle: (direction == .clockwise) ? -CGFloat(randomAngle) : CGFloat(randomAngle), duration: randomDuration)
-            bottle.run(rotateAction)
+            bottle.run(rotateAction){
+                print("terminou")
+                self.bottleAngle = Double(self.bottle.zRotation)
+            }
             direction = .none
-            self.bottleAngle = randomAngle
+            //self.bottleAngle = randomAngle
             print("angulo final da garrafa: ", bottleAngle)
             print("angulo somado a garrafa: ", randomAngle)
             print()
         }
         
-        if !startSwipe {
-            bottleAngle = 0
-        } else if startSwipe && !bottle.hasActions() {
-            let rotateAction = SKAction.rotate(toAngle: CGFloat(bottleAngle), duration: 0)
-            bottle.run(rotateAction)
-            
-            print("setar posição final da garrafa")
-        }
+//        if !startSwipe {
+//            bottleAngle = 0
+//        } else if startSwipe && !bottle.hasActions() {
+//            let rotateAction = SKAction.rotate(toAngle: CGFloat(bottleAngle), duration: 0)
+//            bottle.run(rotateAction)
+//
+//            print("setar posição final da garrafa")
+//        }
         
     }
 }
