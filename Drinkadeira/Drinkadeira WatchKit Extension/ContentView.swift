@@ -16,7 +16,7 @@ struct ContentView: View {
                         .scaledToFit()
                 
             HStack(alignment: .top, spacing: 15){
-                NavigationLink(destination: GarrafaView()) {
+                NavigationLink(destination: BottleView()) {
                                     Text("Jogar")
                 }
                 NavigationLink(destination: QRcodeScreen()) {

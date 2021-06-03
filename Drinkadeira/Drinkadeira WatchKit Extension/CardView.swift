@@ -10,7 +10,9 @@ import SwiftUI
 struct CardView: View {
     @State var shake: Bool = false
     @Binding var show: Bool
-    
+    @Binding var startSwipe: Bool
+    @Binding var endSwipe: Bool
+
     var body: some View {
         VStack(alignment: .center){
             
@@ -33,6 +35,8 @@ struct CardView: View {
                     if self.shake {
                         self.show = false
                         self.shake = false
+                        self.startSwipe = false
+                        self.endSwipe = false
                     } else {
                         self.shake = true
                     }
@@ -143,7 +147,8 @@ struct MessCardsView: View {
 }
 
 struct CardView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        CardView(show: .constant(true))
+        CardView(shake: false, show: .constant(true), startSwipe: .constant(true), endSwipe: .constant(true))
     }
 }
