@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Drinkadeira WatchKit Extension
+//  Gota WatchKit Extension
 //
 //  Created by Hugo Santos on 27/05/21.
 //
