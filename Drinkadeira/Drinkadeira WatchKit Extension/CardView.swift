@@ -22,25 +22,25 @@ struct CardView: View {
                 
                 MessCardsView(shake: self.$shake)
             }
+            .onTapGesture {
+                if self.shake {
+                    self.show = false
+                    self.shake = false
+                    self.startSwipe = false
+                    self.endSwipe = false
+                } else {
+                    self.shake = true
+                }
+            }
             .padding(.top)
             
             Spacer()
             
-            Text(self.shake ? "toque para retornar à tela da garrafa" : "balance o braço para descobrir a carta")
+            Text(self.shake ? "toque para retornar à tela da garrafa" : "toque para descobrir a carta")
                 .font(.footnote)
                 .fontWeight(.light)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                .onTapGesture {
-                    if self.shake {
-                        self.show = false
-                        self.shake = false
-                        self.startSwipe = false
-                        self.endSwipe = false
-                    } else {
-                        self.shake = true
-                    }
-                }
                 .padding(.bottom, -15)
             
         }
