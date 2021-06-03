@@ -1,6 +1,6 @@
 //
 //  QRcodeScreen.swift
-//  Drinkadeira WatchKit Extension
+//  Gota WatchKit Extension
 //
 //  Created by Hugo Santos on 31/05/21.
 //

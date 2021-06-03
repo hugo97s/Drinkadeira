@@ -1,6 +1,6 @@
 //
 //  GarrafaView.swift
-//  Drinkadeira WatchKit Extension
+//  Gota WatchKit Extension
 //
 //  Created by Victor Vieira on 31/05/21.
 //

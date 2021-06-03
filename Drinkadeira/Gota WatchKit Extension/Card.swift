@@ -1,6 +1,6 @@
 //
 //  Card.swift
-//  Drinkadeira WatchKit Extension
+//  Gota WatchKit Extension
 //
 //  Created by Matheus Andrade on 31/05/21.
 //

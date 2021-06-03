@@ -1,6 +1,6 @@
 //
-//  DrinkadeiraApp.swift
-//  Drinkadeira WatchKit Extension
+//  GotaApp.swift
+//  Gota WatchKit Extension
 //
 //  Created by Hugo Santos on 27/05/21.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct DrinkadeiraApp: App {
+struct GotaApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
