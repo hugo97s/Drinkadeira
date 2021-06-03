@@ -13,12 +13,20 @@ class CardsBank {
     
     init() {
         self.cards = [
-            Card(name: "ÁS", imageName: "CardFront", description: "todos os homens bebem"),
-            Card(name: "DOIS", imageName: "CardFront", description: "todos bebem"),
-            Card(name: "TRÊS", imageName: "CardFront", description: "beba dois copos"),
-            Card(name: "QUATRO", imageName: "CardFront", description: "escolha alguém para beber"),
-            Card(name: "CINCO", imageName: "CardFront", description: "todas as mulheres bebem"),
-            Card(name: "SEIS", imageName: "CardFront", description: "escolha um parceiro de bebida")
+            Card(name: "Tsunami", imageName: "As", description: "Todos bebem"),
+            Card(name: "Amigo da onça", imageName: "Dois", description: "Escolha dois amigos para beber"),
+            Card(name: "Três patetas", imageName: "Tres", description: "Escolha dois amigos para beber com você"),
+            Card(name: "Cachorrinho", imageName: "Quatro", description: "Beba na posição do cachorrinho"),
+            Card(name: "Volta bebê, volta neném", imageName: "Cinco", description: "Beba ou ligue para seu/sua ex"),
+            Card(name: "Vivo morto", imageName: "Seis", description: "Bebe quem estiver de pé"),
+            Card(name: "Seu animal", imageName: "Sete", description: "Imite um animal e beba igual a ele"),
+            Card(name: "Molhando o biscoito", imageName: "Oito", description: "Escolha duas pessoas para se beijarem ou beberem juntas"),
+            Card(name: "Morto vivo", imageName: "Nove", description: "Bebe quem não estiver de pé"),
+            Card(name: "Desesperado", imageName: "Dez", description: "Faça um pix de 2 reais para o próximo sorteado ou beba"),
+            Card(name: "Valente", imageName: "Valete", description: "Desafie alguém no Jokenpo, quem perder bebe"),
+            Card(name: "Rainha do funk", imageName: "Rainha", description: "Beba ou rebole até o chão"),
+            Card(name: "Seu rei mandou", imageName: "Rei", description: "Deixe que publiquem algo nas suas redes ou beba 2x"),
+            Card(name: "Pregando peça", imageName: "Coringa", description: "Todos bebem. Escolha alguém para pagar prenda")
         ]
     }
     

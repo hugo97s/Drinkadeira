@@ -23,8 +23,8 @@ struct CardView: View {
             
             Spacer()
             
-            Text(self.shake ? "toque para retornar à tela da garrafa" : "balance o braço para descobrir a carta")
-                .font(.footnote)
+            Text(self.shake ? "toque para sortear o próximo jogador" : "toque para desvendar a carta da ação")
+                .font(.system(size: 11))
                 .fontWeight(.light)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -34,7 +34,8 @@ struct CardView: View {
                 .onReceive(NotificationCenter.default.publisher(for: .deviceDidShake)) { _ in
                     self.shake.toggle()
                 }
-                .padding(.bottom, -15)
+                .padding(.bottom, -18)
+                .padding(.horizontal, 15)
             
         }
     }
@@ -50,24 +51,27 @@ struct ResultCardView: View {
             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
                 Image(card.getImageName())
                     .resizable()
-                    .frame(width: 45, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(.horizontal)
+                    .frame(width: 35, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Spacer().frame(width: 10)
                 
                 Text(card.getName())
                     .font(.caption2)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                    .padding(.horizontal)
             }
             
+            
             Text(card.getDescription())
-                .font(.footnote)
+                .font(.system(size: 13))
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                .frame(height: 35)
+                .frame(height: 50)
                 .padding(.top, 2)
+
         }
+        .padding(.horizontal, 1)
         .shadow(radius: 10)
         .padding()
         .onChange(of: shake, perform: { _ in
