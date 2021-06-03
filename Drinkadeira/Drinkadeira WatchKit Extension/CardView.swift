@@ -23,7 +23,7 @@ struct CardView: View {
             
             Spacer()
             
-            Text(self.shake ? "toque para sortear o próximo jogador" : "toque para desvendar a carta da ação")
+            Text(self.shake ? "toque para sortear o próximo jogador" : "toque para desvendar a ação da carta")
                 .font(.system(size: 11))
                 .fontWeight(.light)
                 .foregroundColor(.white)
@@ -31,12 +31,10 @@ struct CardView: View {
                 .onTapGesture {
                     self.shake.toggle()
                 }
-                .onReceive(NotificationCenter.default.publisher(for: .deviceDidShake)) { _ in
-                    self.shake.toggle()
-                }
                 .padding(.bottom, -18)
                 .padding(.horizontal, 15)
-            
+                
+
         }
     }
 }
@@ -64,12 +62,12 @@ struct ResultCardView: View {
             
             Text(card.getDescription())
                 .font(.system(size: 13))
-                .fontWeight(.semibold)
+                .fontWeight(.regular)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .frame(height: 50)
                 .padding(.top, 2)
-
+            
         }
         .padding(.horizontal, 1)
         .shadow(radius: 10)
@@ -121,6 +119,7 @@ struct MessCardsView: View {
                 .rotationEffect(Angle.init(degrees: 320.0))
                 .offset(x: shakeOffset[3], y: -shakeOffset[3]/2)
         }
+        .offset(y: 10)
         .opacity(self.opacity)
         .onChange(of: shake, perform: { _ in
             if shake {
