@@ -22,7 +22,8 @@
 		3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1C2664FAED008ABC06 /* Card.swift */; };
 		3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */; };
 		3EE2180326610FDF0024884B /* CoreMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2180226610FDF0024884B /* CoreMotionExtension.swift */; };
-		579B780126650A9400BC7323 /* GarrafaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B780026650A9400BC7323 /* GarrafaView.swift */; };
+		579B780126650A9400BC7323 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B780026650A9400BC7323 /* BottleView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,8 @@
 		3ECCAA1C2664FAED008ABC06 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBank.swift; sourceTree = "<group>"; };
 		3EE2180226610FDF0024884B /* CoreMotionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionExtension.swift; sourceTree = "<group>"; };
-		579B780026650A9400BC7323 /* GarrafaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarrafaView.swift; sourceTree = "<group>"; };
+		579B780026650A9400BC7323 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,7 @@
 				2C1D91A926649801006EF105 /* QRcodeScreen.swift */,
 				2C68E863265FCA1D0050ABB2 /* NotificationController.swift */,
 				2C68E865265FCA1D0050ABB2 /* NotificationView.swift */,
-				579B780026650A9400BC7323 /* GarrafaView.swift */,
+				579B780026650A9400BC7323 /* BottleView.swift */,
 				2C68E867265FCA1D0050ABB2 /* ComplicationController.swift */,
 				2C68E869265FCA1D0050ABB2 /* Assets.xcassets */,
 				2C68E86E265FCA1D0050ABB2 /* Info.plist */,
@@ -294,7 +296,7 @@
 				2C1D91AA26649801006EF105 /* QRcodeScreen.swift in Sources */,
 				2C68E860265FCA1D0050ABB2 /* DrinkadeiraApp.swift in Sources */,
 				2C68E866265FCA1D0050ABB2 /* NotificationView.swift in Sources */,
-				579B780126650A9400BC7323 /* GarrafaView.swift in Sources */,
+				579B780126650A9400BC7323 /* BottleView.swift in Sources */,
 				3ECCAA1D2664FAED008ABC06 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

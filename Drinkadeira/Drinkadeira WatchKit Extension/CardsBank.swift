@@ -24,7 +24,7 @@ class CardsBank {
             Card(name: "Morto vivo", imageName: "Nove", description: "Bebe quem não estiver de pé"),
             Card(name: "Desespero", imageName: "Dez", description: "Faça um pix de 2 reais para o próximo sorteado ou beba"),
             Card(name: "Valente", imageName: "Valete", description: "Desafie alguém no Jokenpo. Quem perder, bebe"),
-            Card(name: "Rainha do funk", imageName: "Rainha", description: "Beba ou rebole até o chão"),
+            Card(name: "Rainha do funk", imageName: "Rainha", description: "Beba rebolando até o chão"),
             Card(name: "Seu rei mandou", imageName: "Rei", description: "Deixe que publiquem algo nas suas redes ou beba 2x"),
             Card(name: "Pregando peça", imageName: "Coringa", description: "Todos bebem. Escolha alguém para pagar prenda")
         ]
