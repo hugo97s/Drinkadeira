@@ -23,6 +23,7 @@
 		3ECCAA1F2664FBFB008ABC06 /* CardsBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */; };
 		3EE2180326610FDF0024884B /* CoreMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2180226610FDF0024884B /* CoreMotionExtension.swift */; };
 		579B780126650A9400BC7323 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B780026650A9400BC7323 /* BottleView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		3ECCAA1E2664FBFB008ABC06 /* CardsBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBank.swift; sourceTree = "<group>"; };
 		3EE2180226610FDF0024884B /* CoreMotionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionExtension.swift; sourceTree = "<group>"; };
 		579B780026650A9400BC7323 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

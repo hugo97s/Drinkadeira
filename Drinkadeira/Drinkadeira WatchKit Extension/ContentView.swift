@@ -17,6 +17,7 @@ struct ContentView: View {
                 
             HStack(alignment: .top, spacing: 15){
                 NavigationLink(destination: BottleView()) {
+
                                     Text("Jogar")
                 }
                 NavigationLink(destination: QRcodeScreen()) {
